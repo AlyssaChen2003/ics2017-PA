@@ -801,7 +801,7 @@ Disassembly of section .text:
   1008cb:	e8 84 09 00 00       	call   101254 <printf>
   1008d0:	e8 23 02 00 00       	call   100af8 <init_irq>
   1008d5:	e8 3e fa ff ff       	call   100318 <init_fs>
-  1008da:	c7 04 24 f8 1b 10 00 	movl   $0x101bf8,(%esp)
+  1008da:	c7 04 24 2a 1c 10 00 	movl   $0x101c2a,(%esp)
   1008e1:	e8 26 02 00 00       	call   100b0c <load_prog>
   1008e6:	c7 44 24 0c ee 1e 10 	movl   $0x101eee,0xc(%esp)
   1008ed:	00 
