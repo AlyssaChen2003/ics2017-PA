@@ -1,0 +1,22 @@
+/home/user/ics2017/ics2017/navy-apps/apps/litenes/build/x86//src/fce.o: \
+ src/fce.c \
+ /home/user/ics2017/ics2017/navy-apps/apps/litenes/include/fce.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/litenes/include/common.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/unistd.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/unistd.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/_ansi.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/config.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/types.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/machine/types.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/litenes/include/cpu.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/litenes/include/common.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/litenes/include/memory.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/litenes/include/mmc.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/litenes/include/ppu.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/stdio.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/_ansi.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/reent.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/signal.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/stdlib.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/assert.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libndl/include/ndl.h

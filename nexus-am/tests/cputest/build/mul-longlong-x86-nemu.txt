@@ -1,0 +1,134 @@
+
+/home/user/ics2017/ics2017/nexus-am/tests/cputest/build/mul-longlong-x86-nemu：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc 00 7c 00 00       	mov    $0x7c00,%esp
+  10000a:	e8 0d 00 00 00       	call   10001c <_trm_init>
+  10000f:	90                   	nop
+
+00100010 <_halt>:
+  100010:	55                   	push   %ebp
+  100011:	89 e5                	mov    %esp,%ebp
+  100013:	8b 45 08             	mov    0x8(%ebp),%eax
+  100016:	d6                   	(bad)  
+  100017:	eb fe                	jmp    100017 <_halt+0x7>
+  100019:	66 90                	xchg   %ax,%ax
+  10001b:	90                   	nop
+
+0010001c <_trm_init>:
+  10001c:	55                   	push   %ebp
+  10001d:	89 e5                	mov    %esp,%ebp
+  10001f:	56                   	push   %esi
+  100020:	53                   	push   %ebx
+  100021:	31 f6                	xor    %esi,%esi
+  100023:	bb f9 03 00 00       	mov    $0x3f9,%ebx
+  100028:	89 f0                	mov    %esi,%eax
+  10002a:	89 da                	mov    %ebx,%edx
+  10002c:	ee                   	out    %al,(%dx)
+  10002d:	b9 fb 03 00 00       	mov    $0x3fb,%ecx
+  100032:	b0 80                	mov    $0x80,%al
+  100034:	89 ca                	mov    %ecx,%edx
+  100036:	ee                   	out    %al,(%dx)
+  100037:	b2 f8                	mov    $0xf8,%dl
+  100039:	b0 01                	mov    $0x1,%al
+  10003b:	ee                   	out    %al,(%dx)
+  10003c:	89 f0                	mov    %esi,%eax
+  10003e:	89 da                	mov    %ebx,%edx
+  100040:	ee                   	out    %al,(%dx)
+  100041:	b0 03                	mov    $0x3,%al
+  100043:	89 ca                	mov    %ecx,%edx
+  100045:	ee                   	out    %al,(%dx)
+  100046:	b2 fa                	mov    $0xfa,%dl
+  100048:	b0 c7                	mov    $0xc7,%al
+  10004a:	ee                   	out    %al,(%dx)
+  10004b:	b2 fc                	mov    $0xfc,%dl
+  10004d:	b0 0b                	mov    $0xb,%al
+  10004f:	ee                   	out    %al,(%dx)
+  100050:	e8 3f 00 00 00       	call   100094 <main>
+  100055:	d6                   	(bad)  
+  100056:	eb fe                	jmp    100056 <_trm_init+0x3a>
+
+00100058 <nemu_assert>:
+  100058:	55                   	push   %ebp
+  100059:	89 e5                	mov    %esp,%ebp
+  10005b:	8b 45 08             	mov    0x8(%ebp),%eax
+  10005e:	85 c0                	test   %eax,%eax
+  100060:	74 02                	je     100064 <nemu_assert+0xc>
+  100062:	5d                   	pop    %ebp
+  100063:	c3                   	ret    
+  100064:	c7 45 08 01 00 00 00 	movl   $0x1,0x8(%ebp)
+  10006b:	5d                   	pop    %ebp
+  10006c:	e9 9f ff ff ff       	jmp    100010 <_halt>
+  100071:	8d 76 00             	lea    0x0(%esi),%esi
+
+00100074 <mul>:
+  100074:	55                   	push   %ebp
+  100075:	89 e5                	mov    %esp,%ebp
+  100077:	53                   	push   %ebx
+  100078:	8b 55 08             	mov    0x8(%ebp),%edx
+  10007b:	8b 45 10             	mov    0x10(%ebp),%eax
+  10007e:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+  100081:	0f af d8             	imul   %eax,%ebx
+  100084:	8b 4d 14             	mov    0x14(%ebp),%ecx
+  100087:	0f af ca             	imul   %edx,%ecx
+  10008a:	01 d9                	add    %ebx,%ecx
+  10008c:	f7 e2                	mul    %edx
+  10008e:	01 ca                	add    %ecx,%edx
+  100090:	5b                   	pop    %ebx
+  100091:	5d                   	pop    %ebp
+  100092:	c3                   	ret    
+  100093:	90                   	nop
+
+00100094 <main>:
+  100094:	55                   	push   %ebp
+  100095:	89 e5                	mov    %esp,%ebp
+  100097:	57                   	push   %edi
+  100098:	56                   	push   %esi
+  100099:	53                   	push   %ebx
+  10009a:	83 e4 f0             	and    $0xfffffff0,%esp
+  10009d:	83 ec 10             	sub    $0x10,%esp
+  1000a0:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp)
+  1000a7:	00 
+  1000a8:	c7 44 24 0c 00 00 00 	movl   $0x0,0xc(%esp)
+  1000af:	00 
+  1000b0:	31 ff                	xor    %edi,%edi
+  1000b2:	8b 74 24 0c          	mov    0xc(%esp),%esi
+  1000b6:	03 74 24 08          	add    0x8(%esp),%esi
+  1000ba:	c1 e6 03             	shl    $0x3,%esi
+  1000bd:	89 fb                	mov    %edi,%ebx
+  1000bf:	8b 04 bd 90 01 10 00 	mov    0x100190(,%edi,4),%eax
+  1000c6:	f7 2c 9d 90 01 10 00 	imull  0x100190(,%ebx,4)
+  1000cd:	8b 8c de 40 01 10 00 	mov    0x100140(%esi,%ebx,8),%ecx
+  1000d4:	31 c1                	xor    %eax,%ecx
+  1000d6:	8b 84 de 44 01 10 00 	mov    0x100144(%esi,%ebx,8),%eax
+  1000dd:	31 d0                	xor    %edx,%eax
+  1000df:	09 c1                	or     %eax,%ecx
+  1000e1:	0f 94 c0             	sete   %al
+  1000e4:	0f b6 c0             	movzbl %al,%eax
+  1000e7:	89 04 24             	mov    %eax,(%esp)
+  1000ea:	e8 69 ff ff ff       	call   100058 <nemu_assert>
+  1000ef:	43                   	inc    %ebx
+  1000f0:	83 fb 04             	cmp    $0x4,%ebx
+  1000f3:	75 ca                	jne    1000bf <main+0x2b>
+  1000f5:	83 44 24 0c 04       	addl   $0x4,0xc(%esp)
+  1000fa:	29 7c 24 0c          	sub    %edi,0xc(%esp)
+  1000fe:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+  100105:	e8 4e ff ff ff       	call   100058 <nemu_assert>
+  10010a:	47                   	inc    %edi
+  10010b:	81 44 24 08 ff ff ff 	addl   $0x1fffffff,0x8(%esp)
+  100112:	1f 
+  100113:	83 ff 04             	cmp    $0x4,%edi
+  100116:	75 9a                	jne    1000b2 <main+0x1e>
+  100118:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+  10011f:	e8 34 ff ff ff       	call   100058 <nemu_assert>
+  100124:	31 c0                	xor    %eax,%eax
+  100126:	8d 65 f4             	lea    -0xc(%ebp),%esp
+  100129:	5b                   	pop    %ebx
+  10012a:	5e                   	pop    %esi
+  10012b:	5f                   	pop    %edi
+  10012c:	5d                   	pop    %ebp
+  10012d:	c3                   	ret    

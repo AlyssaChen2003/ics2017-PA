@@ -1,0 +1,11 @@
+/home/user/ics2017/ics2017/navy-apps/apps/pal/build/x86//src/unuse/sdl.o: \
+ src/unuse/sdl.c \
+ /home/user/ics2017/ics2017/navy-apps/apps/pal/include/hal.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/pal/include/common.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/stdio.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/_ansi.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/config.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/reent.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/_ansi.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/signal.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/assert.h
