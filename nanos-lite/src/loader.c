@@ -1,7 +1,7 @@
 #include "common.h"
 #include "fs.h"
 #include "memory.h"
-#define DEFAULT_ENTRY ((void *)0x4000000)
+#define DEFAULT_ENTRY ((void *)0x8048000)
 
 
 // 从ramdisk中`offset`偏移处的`len`字节读入到`buf`中
