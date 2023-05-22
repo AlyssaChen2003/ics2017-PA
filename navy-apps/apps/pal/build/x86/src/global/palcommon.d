@@ -1,0 +1,21 @@
+/home/user/ics2017/ics2017/navy-apps/apps/pal/build/x86//src/global/palcommon.o: \
+ src/global/palcommon.c \
+ /home/user/ics2017/ics2017/navy-apps/apps/pal/include/palcommon.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/pal/include/_common.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/pal/include/common.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/stdio.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/_ansi.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/config.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/reent.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/_ansi.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/signal.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/stdlib.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/string.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/time.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/machine/types.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/pal/include/hal.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/assert.h \
+ /home/user/ics2017/ics2017/navy-apps/apps/pal/include/FLOAT.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/unistd.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/unistd.h \
+ /home/user/ics2017/ics2017/navy-apps/libs/libc/include/sys/types.h

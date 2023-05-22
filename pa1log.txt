@@ -1,0 +1,159 @@
+commit 2d04cee70dc80052f0fd673154f9713f6227fd33
+Author: lsyszbd88 <1641080825@qq.com>
+Date:   Tue Mar 14 10:25:25 2023 +0800
+
+    some notes
+
+commit 1972acdb5a000363c520f66c95ba788e7e646422
+Author: tracer-ics2017 <tracer@njuics.org>
+Date:   Tue Mar 14 09:45:39 2023 +0800
+
+    >  run
+    2013452
+    user
+    Linux user-VirtualBox 3.19.0-31-generic #36~14.04.1-Ubuntu SMP Thu Oct 8 17:59:01 UTC 2015 i686 i686 i686 GNU/Linux
+     09:45:39 up  2:20,  2 users,  load average: 0.16, 0.14, 0.11
+    390b4f8c7f68b3e845bc9943f1e8f2b17d8a21f0
+
+commit 2a6b1f76f73c17cac5c5dcb6a9a360ed7abbf0fd
+Author: tracer-ics2017 <tracer@njuics.org>
+Date:   Tue Mar 14 09:45:39 2023 +0800
+
+    >  compile
+    2013452
+    user
+    Linux user-VirtualBox 3.19.0-31-generic #36~14.04.1-Ubuntu SMP Thu Oct 8 17:59:01 UTC 2015 i686 i686 i686 GNU/Linux
+     09:45:39 up  2:20,  2 users,  load average: 0.16, 0.14, 0.11
+    8b9062feaf8650098126f10c66e1ea3ad9249f8a
+
+commit 05a9d639c42a51ffc9a03c4581ab2ea6e3869e8a
+Author: tracer-ics2017 <tracer@njuics.org>
+Date:   Tue Mar 14 09:45:22 2023 +0800
+
+    >  compile
+    2013452
+    user
+    Linux user-VirtualBox 3.19.0-31-generic #36~14.04.1-Ubuntu SMP Thu Oct 8 17:59:01 UTC 2015 i686 i686 i686 GNU/Linux
+     09:45:22 up  2:19,  2 users,  load average: 0.23, 0.15, 0.11
+    82dbb81774a580a18ea4449b246a564e1f84eb29
+
+commit 0e51b190dcc2feddd9e0edf37fb115a525f8e69a
+Author: lsyszbd88 <1641080825@qq.com>
+Date:   Mon Mar 13 23:32:02 2023 +0800
+
+    before starting pa1
+
+commit 3efe7071539d360a26985111807b87316c2c0d89
+Author: tracer-ics2017 <tracer@njuics.org>
+Date:   Mon Mar 13 23:23:19 2023 +0800
+
+    >  run
+    2013452
+    user
+    Linux user-VirtualBox 3.19.0-31-generic #36~14.04.1-Ubuntu SMP Thu Oct 8 17:59:01 UTC 2015 i686 i686 i686 GNU/Linux
+     23:23:19 up  1:23,  2 users,  load average: 0.67, 0.43, 0.33
+    9547ff5639f66991b5cef928920232bdbf4960b6
+
+commit b0152403806c124e1a5fbd2b0d5ddce6bd285a63
+Author: tracer-ics2017 <tracer@njuics.org>
+Date:   Mon Mar 13 23:23:19 2023 +0800
+
+    >  compile
+    2013452
+    user
+    Linux user-VirtualBox 3.19.0-31-generic #36~14.04.1-Ubuntu SMP Thu Oct 8 17:59:01 UTC 2015 i686 i686 i686 GNU/Linux
+     23:23:19 up  1:23,  2 users,  load average: 0.67, 0.43, 0.33
+    15474e73656e207155d30f09608a69bfa96e047
+
+commit 10ec4b77699ec2ea91ff8d25f707ac66917264e6
+Author: tracer-ics2017 <tracer@njuics.org>
+Date:   Mon Mar 13 23:22:56 2023 +0800
+
+    >  compile
+    2013452
+    user
+    Linux user-VirtualBox 3.19.0-31-generic #36~14.04.1-Ubuntu SMP Thu Oct 8 17:59:01 UTC 2015 i686 i686 i686 GNU/Linux
+     23:22:56 up  1:22,  2 users,  load average: 0.56, 0.40, 0.31
+    54abeba840f1086789e5d724c9ea41354567fd97
+
+commit 63e5868c7efc284cd98695c78332028c46f7d289
+Author: lsyszbd88 <1641080825@qq.com>
+Date:   Mon Mar 13 23:20:32 2023 +0800
+
+    test pa0
+
+commit 68d62aa06b1f2dc840efa58c3fdb092f3f00c404
+Author: lsyszbd88 <1641080825@qq.com>
+Date:   Mon Mar 13 22:35:53 2023 +0800
+
+    ics2017 initialized
+    
+    nemu fe6556cfef53d347415546ab55a69c17f511028a Merge pull request #1 from AlexHYF/fix-adc-sbb
+    nexus-am 1256c84659a5726527c9cb43ebe8bcd2bde8093d SPEC.md: more concrete explanation about `_protect.ptr` in PTE
+    nanos-lite da87b33b541164038df7e0a960ecf2f6ad9cc033 fix indention
+    navy-apps 3cb4bc3b35d81d93ee553a72df2fdf5e479240fa apps,pal: display trademark and splash screens
+
+commit 5b5b182ef51f58176117571d6b4780eb312b263a
+Merge: a811862 a7f5ac6
+Author: Zihao Yu <19884013+sashimi-yzh@users.noreply.github.com>
+Date:   Sat Feb 10 15:13:59 2018 +0800
+
+    Merge pull request #2 from CURAS/patch-1
+    
+    Typo
+
+commit a7f5ac6cb38888516858918b60fa669c53f0119d
+Author: CURAS <3398519433@qq.com>
+Date:   Sat Feb 10 11:19:34 2018 +0800
+
+    Typo
+
+commit a8118623d11f2c540825821d29d1737b1f714c8b
+Author: Zihao Yu <yuzihao@ict.ac.cn>
+Date:   Sat Aug 26 11:50:37 2017 +0800
+
+    init.sh: add retry
+
+commit 7d0c8943ce4ee05eda975d3c29678ac25fc59af4
+Author: Zihao Yu <yuzihao@ict.ac.cn>
+Date:   Fri Aug 25 17:24:20 2017 +0800
+
+    add README.md
+
+commit bfdc521994b2df6e29920ae635aa78920936eff4
+Author: Zihao Yu <yuzihao@ict.ac.cn>
+Date:   Wed Aug 23 22:41:17 2017 +0800
+
+    init.sh: record the HEADs of each subproject in the initialization commit log
+
+commit d53485895c5fe21c9b5aafd31bf06f7f7ba681ff
+Author: Zihao Yu <yuzihao@ict.ac.cn>
+Date:   Wed Aug 23 22:40:35 2017 +0800
+
+    init.sh: use readlink to get absolute path
+    
+    * ubuntu may not have realpath installed by default
+
+commit ae4e3e77574ebce23ad4f2d8b212f16ed775c5f4
+Author: Zihao Yu <yuzihao@ict.ac.cn>
+Date:   Wed Aug 23 16:03:56 2017 +0800
+
+    init.sh: source bashrc
+
+commit 1f274c0dd14e79370c7df1e743bec5326d3fe6a4
+Author: Zihao Yu <yuzihao@ict.ac.cn>
+Date:   Wed Aug 23 16:03:14 2017 +0800
+
+    Makefile: print a message by default, instead of cleaning everything
+
+commit 650f6930847f41c6c921806c27ed34ca75ebbeee
+Author: yzh <yuzihao@ict.ac.cn>
+Date:   Thu Aug 17 00:21:47 2017 +0800
+
+    Makefile: fix tar path
+
+commit 322acff6af13038101c6d0647873e6fd7b88f516
+Author: Zihao Yu <yuzihao@ict.ac.cn>
+Date:   Wed Aug 16 20:57:54 2017 +0800
+
+    first commit

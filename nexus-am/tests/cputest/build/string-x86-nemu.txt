@@ -1,0 +1,343 @@
+
+/home/user/ics2017/ics2017/nexus-am/tests/cputest/build/string-x86-nemu：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc 00 7c 00 00       	mov    $0x7c00,%esp
+  10000a:	e8 0d 00 00 00       	call   10001c <_trm_init>
+  10000f:	90                   	nop
+
+00100010 <_halt>:
+  100010:	55                   	push   %ebp
+  100011:	89 e5                	mov    %esp,%ebp
+  100013:	8b 45 08             	mov    0x8(%ebp),%eax
+  100016:	d6                   	(bad)  
+  100017:	eb fe                	jmp    100017 <_halt+0x7>
+  100019:	66 90                	xchg   %ax,%ax
+  10001b:	90                   	nop
+
+0010001c <_trm_init>:
+  10001c:	55                   	push   %ebp
+  10001d:	89 e5                	mov    %esp,%ebp
+  10001f:	56                   	push   %esi
+  100020:	53                   	push   %ebx
+  100021:	31 f6                	xor    %esi,%esi
+  100023:	bb f9 03 00 00       	mov    $0x3f9,%ebx
+  100028:	89 f0                	mov    %esi,%eax
+  10002a:	89 da                	mov    %ebx,%edx
+  10002c:	ee                   	out    %al,(%dx)
+  10002d:	b9 fb 03 00 00       	mov    $0x3fb,%ecx
+  100032:	b0 80                	mov    $0x80,%al
+  100034:	89 ca                	mov    %ecx,%edx
+  100036:	ee                   	out    %al,(%dx)
+  100037:	b2 f8                	mov    $0xf8,%dl
+  100039:	b0 01                	mov    $0x1,%al
+  10003b:	ee                   	out    %al,(%dx)
+  10003c:	89 f0                	mov    %esi,%eax
+  10003e:	89 da                	mov    %ebx,%edx
+  100040:	ee                   	out    %al,(%dx)
+  100041:	b0 03                	mov    $0x3,%al
+  100043:	89 ca                	mov    %ecx,%edx
+  100045:	ee                   	out    %al,(%dx)
+  100046:	b2 fa                	mov    $0xfa,%dl
+  100048:	b0 c7                	mov    $0xc7,%al
+  10004a:	ee                   	out    %al,(%dx)
+  10004b:	b2 fc                	mov    $0xfc,%dl
+  10004d:	b0 0b                	mov    $0xb,%al
+  10004f:	ee                   	out    %al,(%dx)
+  100050:	e8 1f 00 00 00       	call   100074 <main>
+  100055:	d6                   	(bad)  
+  100056:	eb fe                	jmp    100056 <_trm_init+0x3a>
+
+00100058 <nemu_assert>:
+  100058:	55                   	push   %ebp
+  100059:	89 e5                	mov    %esp,%ebp
+  10005b:	8b 45 08             	mov    0x8(%ebp),%eax
+  10005e:	85 c0                	test   %eax,%eax
+  100060:	74 02                	je     100064 <nemu_assert+0xc>
+  100062:	5d                   	pop    %ebp
+  100063:	c3                   	ret    
+  100064:	c7 45 08 01 00 00 00 	movl   $0x1,0x8(%ebp)
+  10006b:	5d                   	pop    %ebp
+  10006c:	e9 9f ff ff ff       	jmp    100010 <_halt>
+  100071:	66 90                	xchg   %ax,%ax
+  100073:	90                   	nop
+
+00100074 <main>:
+  100074:	55                   	push   %ebp
+  100075:	89 e5                	mov    %esp,%ebp
+  100077:	56                   	push   %esi
+  100078:	53                   	push   %ebx
+  100079:	83 e4 f0             	and    $0xfffffff0,%esp
+  10007c:	83 ec 10             	sub    $0x10,%esp
+  10007f:	a1 94 03 10 00       	mov    0x100394,%eax
+  100084:	89 44 24 04          	mov    %eax,0x4(%esp)
+  100088:	a1 8c 03 10 00       	mov    0x10038c,%eax
+  10008d:	89 04 24             	mov    %eax,(%esp)
+  100090:	e8 8b 01 00 00       	call   100220 <strcmp>
+  100095:	85 c0                	test   %eax,%eax
+  100097:	0f 94 c0             	sete   %al
+  10009a:	0f b6 c0             	movzbl %al,%eax
+  10009d:	89 04 24             	mov    %eax,(%esp)
+  1000a0:	e8 b3 ff ff ff       	call   100058 <nemu_assert>
+  1000a5:	a1 90 03 10 00       	mov    0x100390,%eax
+  1000aa:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1000ae:	a1 8c 03 10 00       	mov    0x10038c,%eax
+  1000b3:	89 04 24             	mov    %eax,(%esp)
+  1000b6:	e8 65 01 00 00       	call   100220 <strcmp>
+  1000bb:	40                   	inc    %eax
+  1000bc:	0f 94 c0             	sete   %al
+  1000bf:	0f b6 c0             	movzbl %al,%eax
+  1000c2:	89 04 24             	mov    %eax,(%esp)
+  1000c5:	e8 8e ff ff ff       	call   100058 <nemu_assert>
+  1000ca:	a1 90 03 10 00       	mov    0x100390,%eax
+  1000cf:	40                   	inc    %eax
+  1000d0:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1000d4:	a1 8c 03 10 00       	mov    0x10038c,%eax
+  1000d9:	40                   	inc    %eax
+  1000da:	89 04 24             	mov    %eax,(%esp)
+  1000dd:	e8 3e 01 00 00       	call   100220 <strcmp>
+  1000e2:	40                   	inc    %eax
+  1000e3:	0f 94 c0             	sete   %al
+  1000e6:	0f b6 c0             	movzbl %al,%eax
+  1000e9:	89 04 24             	mov    %eax,(%esp)
+  1000ec:	e8 67 ff ff ff       	call   100058 <nemu_assert>
+  1000f1:	a1 90 03 10 00       	mov    0x100390,%eax
+  1000f6:	83 c0 02             	add    $0x2,%eax
+  1000f9:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1000fd:	a1 8c 03 10 00       	mov    0x10038c,%eax
+  100102:	83 c0 02             	add    $0x2,%eax
+  100105:	89 04 24             	mov    %eax,(%esp)
+  100108:	e8 13 01 00 00       	call   100220 <strcmp>
+  10010d:	40                   	inc    %eax
+  10010e:	0f 94 c0             	sete   %al
+  100111:	0f b6 c0             	movzbl %al,%eax
+  100114:	89 04 24             	mov    %eax,(%esp)
+  100117:	e8 3c ff ff ff       	call   100058 <nemu_assert>
+  10011c:	a1 90 03 10 00       	mov    0x100390,%eax
+  100121:	83 c0 03             	add    $0x3,%eax
+  100124:	89 44 24 04          	mov    %eax,0x4(%esp)
+  100128:	a1 8c 03 10 00       	mov    0x10038c,%eax
+  10012d:	83 c0 03             	add    $0x3,%eax
+  100130:	89 04 24             	mov    %eax,(%esp)
+  100133:	e8 e8 00 00 00       	call   100220 <strcmp>
+  100138:	40                   	inc    %eax
+  100139:	0f 94 c0             	sete   %al
+  10013c:	0f b6 c0             	movzbl %al,%eax
+  10013f:	89 04 24             	mov    %eax,(%esp)
+  100142:	e8 11 ff ff ff       	call   100058 <nemu_assert>
+  100147:	8b 1d 9c 03 10 00    	mov    0x10039c,%ebx
+  10014d:	8b 35 98 03 10 00    	mov    0x100398,%esi
+  100153:	c7 44 24 04 84 03 10 	movl   $0x100384,0x4(%esp)
+  10015a:	00 
+  10015b:	c7 04 24 a4 03 10 00 	movl   $0x1003a4,(%esp)
+  100162:	e8 79 00 00 00       	call   1001e0 <strcpy>
+  100167:	89 74 24 04          	mov    %esi,0x4(%esp)
+  10016b:	89 04 24             	mov    %eax,(%esp)
+  10016e:	e8 89 00 00 00       	call   1001fc <strcat>
+  100173:	89 5c 24 04          	mov    %ebx,0x4(%esp)
+  100177:	89 04 24             	mov    %eax,(%esp)
+  10017a:	e8 a1 00 00 00       	call   100220 <strcmp>
+  10017f:	85 c0                	test   %eax,%eax
+  100181:	0f 94 c0             	sete   %al
+  100184:	0f b6 c0             	movzbl %al,%eax
+  100187:	89 04 24             	mov    %eax,(%esp)
+  10018a:	e8 c9 fe ff ff       	call   100058 <nemu_assert>
+  10018f:	8b 1d a0 03 10 00    	mov    0x1003a0,%ebx
+  100195:	c7 44 24 08 05 00 00 	movl   $0x5,0x8(%esp)
+  10019c:	00 
+  10019d:	c7 44 24 04 23 00 00 	movl   $0x23,0x4(%esp)
+  1001a4:	00 
+  1001a5:	c7 04 24 a4 03 10 00 	movl   $0x1003a4,(%esp)
+  1001ac:	e8 ab 00 00 00       	call   10025c <memset>
+  1001b1:	c7 44 24 08 05 00 00 	movl   $0x5,0x8(%esp)
+  1001b8:	00 
+  1001b9:	89 5c 24 04          	mov    %ebx,0x4(%esp)
+  1001bd:	89 04 24             	mov    %eax,(%esp)
+  1001c0:	e8 f7 00 00 00       	call   1002bc <memcmp>
+  1001c5:	85 c0                	test   %eax,%eax
+  1001c7:	0f 94 c0             	sete   %al
+  1001ca:	0f b6 c0             	movzbl %al,%eax
+  1001cd:	89 04 24             	mov    %eax,(%esp)
+  1001d0:	e8 83 fe ff ff       	call   100058 <nemu_assert>
+  1001d5:	31 c0                	xor    %eax,%eax
+  1001d7:	8d 65 f8             	lea    -0x8(%ebp),%esp
+  1001da:	5b                   	pop    %ebx
+  1001db:	5e                   	pop    %esi
+  1001dc:	5d                   	pop    %ebp
+  1001dd:	c3                   	ret    
+  1001de:	66 90                	xchg   %ax,%ax
+
+001001e0 <strcpy>:
+  1001e0:	55                   	push   %ebp
+  1001e1:	89 e5                	mov    %esp,%ebp
+  1001e3:	53                   	push   %ebx
+  1001e4:	8b 45 08             	mov    0x8(%ebp),%eax
+  1001e7:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+  1001ea:	89 c2                	mov    %eax,%edx
+  1001ec:	42                   	inc    %edx
+  1001ed:	41                   	inc    %ecx
+  1001ee:	8a 59 ff             	mov    -0x1(%ecx),%bl
+  1001f1:	88 5a ff             	mov    %bl,-0x1(%edx)
+  1001f4:	84 db                	test   %bl,%bl
+  1001f6:	75 f4                	jne    1001ec <strcpy+0xc>
+  1001f8:	5b                   	pop    %ebx
+  1001f9:	5d                   	pop    %ebp
+  1001fa:	c3                   	ret    
+  1001fb:	90                   	nop
+
+001001fc <strcat>:
+  1001fc:	55                   	push   %ebp
+  1001fd:	89 e5                	mov    %esp,%ebp
+  1001ff:	53                   	push   %ebx
+  100200:	8b 45 08             	mov    0x8(%ebp),%eax
+  100203:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+  100206:	89 c2                	mov    %eax,%edx
+  100208:	42                   	inc    %edx
+  100209:	80 3a 00             	cmpb   $0x0,(%edx)
+  10020c:	75 fa                	jne    100208 <strcat+0xc>
+  10020e:	66 90                	xchg   %ax,%ax
+  100210:	42                   	inc    %edx
+  100211:	41                   	inc    %ecx
+  100212:	8a 59 ff             	mov    -0x1(%ecx),%bl
+  100215:	88 5a ff             	mov    %bl,-0x1(%edx)
+  100218:	84 db                	test   %bl,%bl
+  10021a:	75 f4                	jne    100210 <strcat+0x14>
+  10021c:	5b                   	pop    %ebx
+  10021d:	5d                   	pop    %ebp
+  10021e:	c3                   	ret    
+  10021f:	90                   	nop
+
+00100220 <strcmp>:
+  100220:	55                   	push   %ebp
+  100221:	89 e5                	mov    %esp,%ebp
+  100223:	56                   	push   %esi
+  100224:	53                   	push   %ebx
+  100225:	8b 4d 08             	mov    0x8(%ebp),%ecx
+  100228:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+  10022b:	0f be 01             	movsbl (%ecx),%eax
+  10022e:	0f be 13             	movsbl (%ebx),%edx
+  100231:	84 c0                	test   %al,%al
+  100233:	75 14                	jne    100249 <strcmp+0x29>
+  100235:	eb 1d                	jmp    100254 <strcmp+0x34>
+  100237:	90                   	nop
+  100238:	41                   	inc    %ecx
+  100239:	8d 73 01             	lea    0x1(%ebx),%esi
+  10023c:	0f be 01             	movsbl (%ecx),%eax
+  10023f:	0f be 53 01          	movsbl 0x1(%ebx),%edx
+  100243:	84 c0                	test   %al,%al
+  100245:	74 0d                	je     100254 <strcmp+0x34>
+  100247:	89 f3                	mov    %esi,%ebx
+  100249:	38 d0                	cmp    %dl,%al
+  10024b:	74 eb                	je     100238 <strcmp+0x18>
+  10024d:	29 d0                	sub    %edx,%eax
+  10024f:	5b                   	pop    %ebx
+  100250:	5e                   	pop    %esi
+  100251:	5d                   	pop    %ebp
+  100252:	c3                   	ret    
+  100253:	90                   	nop
+  100254:	31 c0                	xor    %eax,%eax
+  100256:	29 d0                	sub    %edx,%eax
+  100258:	5b                   	pop    %ebx
+  100259:	5e                   	pop    %esi
+  10025a:	5d                   	pop    %ebp
+  10025b:	c3                   	ret    
+
+0010025c <memset>:
+  10025c:	55                   	push   %ebp
+  10025d:	89 e5                	mov    %esp,%ebp
+  10025f:	57                   	push   %edi
+  100260:	56                   	push   %esi
+  100261:	53                   	push   %ebx
+  100262:	8b 45 08             	mov    0x8(%ebp),%eax
+  100265:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+  100268:	8b 7d 10             	mov    0x10(%ebp),%edi
+  10026b:	0f b6 d3             	movzbl %bl,%edx
+  10026e:	89 d6                	mov    %edx,%esi
+  100270:	c1 e6 08             	shl    $0x8,%esi
+  100273:	09 f2                	or     %esi,%edx
+  100275:	89 d6                	mov    %edx,%esi
+  100277:	c1 e6 10             	shl    $0x10,%esi
+  10027a:	09 d6                	or     %edx,%esi
+  10027c:	89 f9                	mov    %edi,%ecx
+  10027e:	83 e1 f0             	and    $0xfffffff0,%ecx
+  100281:	7e 30                	jle    1002b3 <memset+0x57>
+  100283:	31 d2                	xor    %edx,%edx
+  100285:	8d 76 00             	lea    0x0(%esi),%esi
+  100288:	89 34 10             	mov    %esi,(%eax,%edx,1)
+  10028b:	89 74 10 04          	mov    %esi,0x4(%eax,%edx,1)
+  10028f:	89 74 10 08          	mov    %esi,0x8(%eax,%edx,1)
+  100293:	89 74 10 0c          	mov    %esi,0xc(%eax,%edx,1)
+  100297:	83 c2 10             	add    $0x10,%edx
+  10029a:	39 d1                	cmp    %edx,%ecx
+  10029c:	7f ea                	jg     100288 <memset+0x2c>
+  10029e:	89 ca                	mov    %ecx,%edx
+  1002a0:	39 cf                	cmp    %ecx,%edi
+  1002a2:	76 0a                	jbe    1002ae <memset+0x52>
+  1002a4:	88 1c 08             	mov    %bl,(%eax,%ecx,1)
+  1002a7:	42                   	inc    %edx
+  1002a8:	89 d1                	mov    %edx,%ecx
+  1002aa:	39 d7                	cmp    %edx,%edi
+  1002ac:	77 f6                	ja     1002a4 <memset+0x48>
+  1002ae:	5b                   	pop    %ebx
+  1002af:	5e                   	pop    %esi
+  1002b0:	5f                   	pop    %edi
+  1002b1:	5d                   	pop    %ebp
+  1002b2:	c3                   	ret    
+  1002b3:	31 c9                	xor    %ecx,%ecx
+  1002b5:	31 d2                	xor    %edx,%edx
+  1002b7:	eb e7                	jmp    1002a0 <memset+0x44>
+  1002b9:	66 90                	xchg   %ax,%ax
+  1002bb:	90                   	nop
+
+001002bc <memcmp>:
+  1002bc:	55                   	push   %ebp
+  1002bd:	89 e5                	mov    %esp,%ebp
+  1002bf:	57                   	push   %edi
+  1002c0:	56                   	push   %esi
+  1002c1:	53                   	push   %ebx
+  1002c2:	8b 5d 08             	mov    0x8(%ebp),%ebx
+  1002c5:	8b 45 0c             	mov    0xc(%ebp),%eax
+  1002c8:	8b 75 10             	mov    0x10(%ebp),%esi
+  1002cb:	8a 13                	mov    (%ebx),%dl
+  1002cd:	0f be 08             	movsbl (%eax),%ecx
+  1002d0:	83 fe 01             	cmp    $0x1,%esi
+  1002d3:	74 2b                	je     100300 <memcmp+0x44>
+  1002d5:	84 d2                	test   %dl,%dl
+  1002d7:	74 27                	je     100300 <memcmp+0x44>
+  1002d9:	38 ca                	cmp    %cl,%dl
+  1002db:	75 23                	jne    100300 <memcmp+0x44>
+  1002dd:	8d 74 30 fe          	lea    -0x2(%eax,%esi,1),%esi
+  1002e1:	eb 0f                	jmp    1002f2 <memcmp+0x36>
+  1002e3:	90                   	nop
+  1002e4:	84 d2                	test   %dl,%dl
+  1002e6:	74 24                	je     10030c <memcmp+0x50>
+  1002e8:	40                   	inc    %eax
+  1002e9:	0f be 08             	movsbl (%eax),%ecx
+  1002ec:	89 fb                	mov    %edi,%ebx
+  1002ee:	38 ca                	cmp    %cl,%dl
+  1002f0:	75 0e                	jne    100300 <memcmp+0x44>
+  1002f2:	8d 7b 01             	lea    0x1(%ebx),%edi
+  1002f5:	8a 53 01             	mov    0x1(%ebx),%dl
+  1002f8:	39 c6                	cmp    %eax,%esi
+  1002fa:	75 e8                	jne    1002e4 <memcmp+0x28>
+  1002fc:	0f be 4e 01          	movsbl 0x1(%esi),%ecx
+  100300:	0f be c2             	movsbl %dl,%eax
+  100303:	29 c8                	sub    %ecx,%eax
+  100305:	5b                   	pop    %ebx
+  100306:	5e                   	pop    %esi
+  100307:	5f                   	pop    %edi
+  100308:	5d                   	pop    %ebp
+  100309:	c3                   	ret    
+  10030a:	66 90                	xchg   %ax,%ax
+  10030c:	0f be 48 01          	movsbl 0x1(%eax),%ecx
+  100310:	0f be c2             	movsbl %dl,%eax
+  100313:	29 c8                	sub    %ecx,%eax
+  100315:	5b                   	pop    %ebx
+  100316:	5e                   	pop    %esi
+  100317:	5f                   	pop    %edi
+  100318:	5d                   	pop    %ebp
+  100319:	c3                   	ret    
