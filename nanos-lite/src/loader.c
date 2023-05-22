@@ -16,13 +16,39 @@ uintptr_t loader(_Protect *as, const char *filename) {
   // TODO();
 
   //ramdisk_read(DEFAULT_ENTRY,0,get_ramdisk_size()); 
-  int fd = fs_open(filename, 0, 0);
-  Log("fd=%d\n",fd);
-  size_t f_size = fs_filesz(fd);
-  //Log("filesize=%d",f_size);
-  fs_read(fd, DEFAULT_ENTRY, f_size);
-  fs_close(fd);
+
+//pa3
+
+  // int fd = fs_open(filename, 0, 0);
+  // Log("fd=%d\n",fd);
+  // size_t f_size = fs_filesz(fd);
+  // //Log("filesize=%d",f_size);
+  // fs_read(fd, DEFAULT_ENTRY, f_size);
+  // fs_close(fd);
   
+  // return (uintptr_t)DEFAULT_ENTRY;
+
+//pa4
+  int fd = fs_open(filename, 0, 0);
+  int bytes = fs_filesz(fd);
+  int n = bytes / PGSIZE;
+  int m = bytes % PGSIZE;
+  int i;
+  void *pa;
+
+  for (i = 0; i < n; i++) {
+    pa = new_page();
+    _map(as, DEFAULT_ENTRY + i * PGSIZE, pa);
+    fs_read(fd, pa, PGSIZE);
+  }
+
+  pa = new_page();
+  _map(as, DEFAULT_ENTRY + i * PGSIZE, pa);
+  fs_read(fd, pa, m);
+
+  fs_close(fd);
   return (uintptr_t)DEFAULT_ENTRY;
+
+
 
 }
