@@ -71,7 +71,8 @@ static inline _RegSet* sys_brk(_RegSet *r){
 //  //r->eax=0;
 //   return NULL;
   
-  return (_RegSet*)mm_brk(r->eax);
+  SYSCALL_ARG1(r) = mm_brk(SYSCALL_ARG2(r));
+  return NULL;
 }
 
 _RegSet* do_syscall(_RegSet *r) {
