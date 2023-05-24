@@ -2202,13 +2202,13 @@ Disassembly of section .text:
   1017b4:	c1 e8 10             	shr    $0x10,%eax
   1017b7:	66 a3 2e f4 cd 02    	mov    %ax,0x2cdf42e
   1017bd:	b8 37 18 10 00       	mov    $0x101837,%eax
-  1017c2:	66 a3 a8 f1 cd 02    	mov    %ax,0x2cdf1a8
-  1017c8:	66 c7 05 aa f1 cd 02 	movw   $0x8,0x2cdf1aa
+  1017c2:	66 a3 b0 f1 cd 02    	mov    %ax,0x2cdf1b0
+  1017c8:	66 c7 05 b2 f1 cd 02 	movw   $0x8,0x2cdf1b2
   1017cf:	08 00 
-  1017d1:	c6 05 ac f1 cd 02 00 	movb   $0x0,0x2cdf1ac
-  1017d8:	c6 05 ad f1 cd 02 ef 	movb   $0xef,0x2cdf1ad
+  1017d1:	c6 05 b4 f1 cd 02 00 	movb   $0x0,0x2cdf1b4
+  1017d8:	c6 05 b5 f1 cd 02 ef 	movb   $0xef,0x2cdf1b5
   1017df:	c1 e8 10             	shr    $0x10,%eax
-  1017e2:	66 a3 ae f1 cd 02    	mov    %ax,0x2cdf1ae
+  1017e2:	66 a3 b6 f1 cd 02    	mov    %ax,0x2cdf1b6
   1017e8:	66 c7 05 04 f0 cd 02 	movw   $0x7ff,0x2cdf004
   1017ef:	ff 07 
   1017f1:	66 89 15 06 f0 cd 02 	mov    %dx,0x2cdf006
@@ -2248,7 +2248,7 @@ Disassembly of section .text:
 
 00101837 <vectime>:
   101837:	6a 00                	push   $0x0
-  101839:	6a 31                	push   $0x31
+  101839:	6a 32                	push   $0x32
   10183b:	eb 00                	jmp    10183d <asm_trap>
 
 0010183d <asm_trap>:
