@@ -86,5 +86,21 @@ void _unmap(_Protect *p, void *va) {
 }
 
 _RegSet *_umake(_Protect *p, _Area ustack, _Area kstack, void *entry, char *const argv[], char *const envp[]) {
-  return NULL;
+  uint32_t* pStack = (uint32_t*)ustack.end;
+
+  // 设置_start函数的参数
+  for (int i = 0; i < 8; i++) {
+    *(pStack--) = 0;
+  }
+  *(pStack--) = 0x202;             // EFLAGS寄存器 IF位置1
+  *(pStack--) = 0x8;               // CS寄存器
+  *(pStack--) = (uint32_t)entry;   // 返回地址
+  *(pStack--) = 0;                 // error_code
+  *(pStack--) = 0x81;              // irq
+  for (int i = 0; i < 8; i++) {     // 八个通用寄存器
+    *(pStack--) = 0;
+  }
+  pStack++;
+
+  return (_RegSet*)pStack;  // 返回陷阱帧指针
 }
