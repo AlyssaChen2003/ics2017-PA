@@ -51,7 +51,7 @@ void _protect(_Protect *p) {
   p->ptr = updir;
   // map kernel space
   for (int i = 0; i < NR_PDE; i ++) {
-    updir[i] = kpdirs[i];
+    //updir[i] = kpdirs[i];
   }
 
   p->area.start = (void*)0x8000000;
@@ -86,23 +86,23 @@ void _unmap(_Protect *p, void *va) {
 }
 
 _RegSet *_umake(_Protect *p, _Area ustack, _Area kstack, void *entry, char *const argv[], char *const envp[]) {
-  //设置_start函数的参数
-  uint32_t *pStack = (uint32_t*)(ustack.end); 
-  for(int i=0;i<8;i++)
-  {
-    *(pStack--) = 0;
-  }
+   extern void *memcpy(void *,const void*,int);
+  //设置_start()的栈帧
+  int arg1=0;
+  char *arg2=NULL;
+  memcpy((void*)ustack.end-4,(void*)arg2,4);
+  memcpy((void*)ustack.end-8,(void*)arg2,4);
+  memcpy((void*)ustack.end-12,(void*)arg1,4);
+  memcpy((void*)ustack.end-16,(void*)arg1,4);
+  //trapframe
+  _RegSet tf;
+  tf.eflags=0x02;
+  tf.cs=8;
+  tf.eip=(uintptr_t)entry;//返回地址为entry
+  void *ptf=(void*)(ustack.end-16-sizeof(_RegSet));//tf的基址
+  memcpy(ptf,(void*)&tf,sizeof(_RegSet));//把tf压栈
 
-  *(pStack--) = 0x202;//EFLAGS寄存器 IF位置1
-  *(pStack--) = 0x8;//CS寄存器 
-  *(pStack--) = (uint32_t)entry;//返回地址
-  *(pStack--) = 0;//error_code
-  *(pStack--) = 0x81;//irq
-  for(int i=0;i<8;i++)//八个通用寄存器
-  {
-    *(pStack--) = 0;
-  }
-  pStack++;
+    return (_RegSet*)ptf;
 
-  return (_RegSet *)pStack ;//返回陷阱帧指针
+
 }
