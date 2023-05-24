@@ -247,16 +247,17 @@ void exec_wrapper(bool print_flag) {
 #endif
 
   update_eip();
-
+if (cpu.INTR & cpu.IF) {
+  printf("raise a time irq!\n");
+  cpu.INTR = false;
+  raise_intr(TIMER_IRQ, cpu.eip);
+  update_eip();
+}
 #ifdef DIFF_TEST
   void difftest_step(uint32_t);
   difftest_step(eip);
 #endif
 
 
-if (cpu.INTR & cpu.IF) {
-  cpu.INTR = false;
-  raise_intr(TIMER_IRQ, cpu.eip);
-  update_eip();
-}
+
 }
