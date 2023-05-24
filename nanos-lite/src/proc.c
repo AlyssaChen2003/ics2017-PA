@@ -26,7 +26,7 @@ void load_prog(const char *filename) {
   pcb[i].tf = _umake(&pcb[i].as, stack, stack, (void *)entry, NULL, NULL);
 }
 // static uint32_t count = 1;
-// extern int current_game ;
+extern int current_game ;
 //进程调度
 _RegSet* schedule(_RegSet *prev) {
   // return NULL;
@@ -49,6 +49,19 @@ _RegSet* schedule(_RegSet *prev) {
   if(num==freq){//如果到达1000次，则切换成进程1
     current=&pcb[1];
     num=0;
+  }
+  else{
+    if(current_game)
+    {
+      current = &pcb[0];
+      num++;
+    }
+    else
+    {
+      current = &pcb[2];
+      num++;
+    }
+
   }
   _switch(&current->as);//切换虚拟地址空间
   return current->tf;
