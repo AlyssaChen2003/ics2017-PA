@@ -12,8 +12,8 @@ void raise_intr(uint8_t NO, vaddr_t ret_addr) {
 
     // 将 EFLAGS、CS、返回地址压栈
     uint32_t t0 = cpu.cs;  // cpu.cs 只有 16 位，需要转换成 32 位
-    rtl_push(&cpu.eflags);
-    cpu.IF = 0;//4.3:关闭IF位
+    rtl_push(&cpu.eflags.val);
+    cpu.eflags.IF = 0;//4.3:关闭IF位
     rtl_push(&t0);
     rtl_push(&ret_addr);
 

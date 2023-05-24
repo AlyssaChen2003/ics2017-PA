@@ -247,7 +247,7 @@ void exec_wrapper(bool print_flag) {
 #endif
 
   update_eip();
-if (cpu.INTR & cpu.IF) {
+if (cpu.INTR & cpu.eflags.IF) {
   printf("raise a time irq!\n");
   cpu.INTR = false;
   raise_intr(TIMER_IRQ, cpu.eip);

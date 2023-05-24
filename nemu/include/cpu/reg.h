@@ -37,23 +37,29 @@ typedef struct {
 
   vaddr_t eip;
   
-  union{
-    struct
-    {
-      uint32_t CF : 1;
-      uint32_t    : 1;
-      uint32_t    : 4;
-      uint32_t ZF : 1;
-      uint32_t SF : 1;
-      uint32_t    : 1;
-      uint32_t IF : 1;
-      uint32_t DF : 1;
-      uint32_t OF : 1;
-      uint32_t    : 20;
-    };
-    uint32_t eflags;
-  };
-
+  union {
+    struct {
+      uint32_t CF:    1;    //CARRY FLAG               ---
+      uint32_t :      1;    //                          |
+      uint32_t PF:    1;    //PARITY FLAG               |
+      uint32_t :      1;    //                          |
+      uint32_t AF:    1;    //AUXILIARY CARRY           |   STATUS FLAG
+      uint32_t :      1;    //                          |
+      uint32_t ZF:    1;    //ZERO FLAG                 |
+      uint32_t SF:    1;    //SIGN FLAG                 |
+      uint32_t TF:    1;    //TRAP FLAG                ---
+      uint32_t IF:    1;    //INTERRUPT ENABLE
+      uint32_t DF:    1;    //DIRECTION FLAG
+      uint32_t OF:    1;    //OVERFLOW
+      uint32_t IOPL:  2;    //I/O PRIVILEGE LEVEL
+      uint32_t NT:    1;    //NESTED TASK FLAG
+      uint32_t :      1;
+      uint32_t RF:    1;    //RESUME FLAG
+      uint32_t VM:    1;    //VIRTUAL 8086 MODE
+      uint32_t :      17;
+    };              
+    uint32_t val;
+  }eflags;
   uint32_t cs;
   struct{
     uint32_t base;
