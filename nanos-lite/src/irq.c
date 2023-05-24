@@ -6,7 +6,7 @@ static _RegSet* do_event(_Event e, _RegSet* r) {
     case _EVENT_SYSCALL:
       //Log("syscall event!!!11111111111");
       do_syscall(r);
-      //return schedule(r);//返回新的进程的tf
+      return schedule(r);//返回新的进程的tf
       break;
     case(_EVENT_TRAP):
       Log("self-trapped event!\n");
