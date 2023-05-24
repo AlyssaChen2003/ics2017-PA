@@ -12,7 +12,7 @@ static _RegSet* do_event(_Event e, _RegSet* r) {
       printf("self-trapped event!\n");
       return schedule(r);//返回新的进程的tf
     case(_EVENT_IRQ_TIME):
-      Log("IRQ TIME event!\n");
+      printf("IRQ TIME event!\n");
       return schedule(r);//返回新的进程的tf
     default: panic("Unhandled event ID = %d", e.event);
   }
