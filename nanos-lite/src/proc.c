@@ -40,12 +40,12 @@ _RegSet* schedule(_RegSet *prev) {
   }
   static int num=0;
   static const int freq=1000;
-  if(current==&pcb[0]){
-    num++;
-  }
-  else{
-    current=&pcb[0];
-  }
+  // if(current==&pcb[0]){
+  //   num++;
+  // }
+  // else{
+  //   current=&pcb[0];
+  // }
   if(num==freq){//如果到达1000次，则切换成进程1
     current=&pcb[1];
     num=0;
