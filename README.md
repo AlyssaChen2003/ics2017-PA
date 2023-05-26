@@ -1,4 +1,4 @@
-# ICS2017 Programming Assignment
+# ICS2017 Programming Assignment —— NKU version (pa1-pa5)
 
 This project is the programming assignment of the class ICS(Introduction to Computer System) in Department of Computer Science and Technology, Nanjing University.
 
