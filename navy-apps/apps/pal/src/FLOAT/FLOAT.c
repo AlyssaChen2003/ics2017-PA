@@ -41,41 +41,41 @@ FLOAT f2F(float a) {
    * performing arithmetic operations on it directly?
    */
 
-  assert(0);
-  return 0;
-  // union float_ {
-  //   struct {
-  //     uint32_t man : 23;
-  //     uint32_t exp : 8;
-  //     uint32_t sign : 1;
-  //   };
-  //   uint32_t val;
-  // };
-  // union float_ f;
-  // f.val = *((uint32_t*)(void*)&a);
-  // int exp = f.exp - 127;
-  // FLOAT ret = 0;
-  // if (exp == 128)
-  //   assert(0);
-  // if (exp >= 0) {
-  //   int mov = 7 - exp;
-  //   if (mov >= 0)
-  //     ret = (f.man | (1 << 23)) >> mov;
-  //   else
-  //     ret = (f.man | (1 << 23)) << (-mov);
-  // }
-  // else
-  //   return 0;
-  // return f.sign == 0 ? ret : -ret;
+  // assert(0);
+  // return 0;
+  union float_ {
+    struct {
+      uint32_t man : 23;
+      uint32_t exp : 8;
+      uint32_t sign : 1;
+    };
+    uint32_t val;
+  };
+  union float_ f;
+  f.val = *((uint32_t*)(void*)&a);
+  int exp = f.exp - 127;
+  FLOAT ret = 0;
+  if (exp == 128)
+    assert(0);
+  if (exp >= 0) {
+    int mov = 7 - exp;
+    if (mov >= 0)
+      ret = (f.man | (1 << 23)) >> mov;
+    else
+      ret = (f.man | (1 << 23)) << (-mov);
+  }
+  else
+    return 0;
+  return f.sign == 0 ? ret : -ret;
 }
 
 FLOAT Fabs(FLOAT a) {
-  assert(0);
-  return 0;
-  // if ((a & 0x80000000) == 0)
-  //   return a;
-  // else
-  //   return -a;
+  // assert(0);
+  // return 0;
+  if ((a & 0x80000000) == 0)
+    return a;
+  else
+    return -a;
 }
 
 
